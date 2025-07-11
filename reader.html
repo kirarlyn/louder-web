@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc truyện</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            louder
+        </a>
+    </header>
+
+    <main>
+        <div class="reader-container">
+            <div id="reader-header">
+                <a href="#" id="back-to-manga-link">‹ Quay lại</a>
+                <h2 id="chapter-title"></h2>
+            </div>
+            
+            <div class="chapter-navigation">
+                <a href="#" id="prev-chapter-link" class="nav-button">« Chapter Trước</a>
+                <a href="#" id="next-chapter-link" class="nav-button">Chapter Tiếp »</a>
+            </div>
+
+            <div class="manga-page">
+                <img id="current-page-image" src="" alt="Trang truyện">
+            </div>
+
+            <div class="navigation">
+                <button id="prev-button">« Trang Trước</button>
+                <span id="page-counter">Trang 0 / 0</span>
+                <button id="next-button">Trang Sau »</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="database.js"></script>
+    <script src="reader-script.js"></script> </body>
+</html>

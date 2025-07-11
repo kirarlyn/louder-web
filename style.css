@@ -1,0 +1,243 @@
+/* Thiết lập chung cho toàn trang */
+body {
+    margin: 0; /* Xóa bỏ mọi khoảng trắng mặc định */
+    font-family: sans-serif; /* Font chữ chung, dễ đọc */
+    background-color: #f0f8ff; /* Màu xanh biển nhạt mờ (AliceBlue) */
+}
+
+/* Trang trí cho thanh điều hướng */
+.main-header {
+    background-color: #005f73; /* Màu xanh biển đậm, sâu */
+    padding: 15px 30px; /* Tạo khoảng trống bên trong thanh header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Tạo bóng mờ nhẹ để thanh header nổi bật */
+}
+
+/* Trang trí cho logo */
+.logo {
+    font-family: 'Pacifico', cursive; /* Sử dụng font chữ phong cách đã nhập từ Google */
+    font-size: 32px; /* Kích thước chữ to, nổi bật */
+    color: white; /* Chữ màu trắng để nổi trên nền xanh */
+}
+/* --- CSS cho khung đọc truyện --- */
+
+.reader-container {
+    max-width: 800px; /* Giới hạn chiều rộng của khung đọc */
+    margin: 30px auto; /* Căn giữa khung đọc theo chiều ngang */
+    text-align: center; /* Căn giữa các nội dung bên trong */
+}
+
+.manga-page img {
+    /* Thuộc tính cũ */
+    max-width: 100%;
+    border: 1px solid #ccc;
+
+    /* --- NÂNG CẤP MỚI --- */
+    display: block; /* Giúp căn giữa dễ hơn */
+    margin: 0 auto; /* Tự động căn giữa ảnh theo chiều ngang */
+
+    /* Giới hạn chiều cao tối đa của ảnh bằng chiều cao màn hình trừ đi 160px */
+    /* 160px là khoảng trống dành cho header, tiêu đề chapter... */
+    max-height: calc(100vh - 160px);
+
+    /* Để chiều rộng tự điều chỉnh theo chiều cao, tránh làm méo ảnh */
+    width: auto; 
+}
+
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between; /* Đẩy các nút ra 2 bên */
+    align-items: center; /* Căn giữa các mục theo chiều dọc */
+}
+
+.navigation button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0077be; /* Màu xanh dương cho nút */
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer; /* Biến con trỏ thành hình bàn tay khi di chuột vào */
+    transition: background-color 0.2s; /* Hiệu ứng chuyển màu mượt */
+}
+
+.navigation button:hover {
+    background-color: #005f99; /* Màu xanh đậm hơn khi di chuột */
+}
+
+#page-counter {
+    font-size: 18px;
+    font-weight: bold;
+}
+/* --- Ẩn nút điều khiển --- */
+#prev-button, #next-button {
+    display: none; /* Thuộc tính quan trọng để ẩn phần tử */
+}
+/* --- CSS cho Trang chủ --- */
+
+.page-title {
+    text-align: center;
+    margin: 20px 0 30px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+#manga-list-container {
+    display: grid;
+    /* Tự động chia cột, mỗi cột rộng tối thiểu 180px */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px; /* Khoảng cách giữa các truyện */
+    padding: 0 40px; /* Thêm khoảng trống 2 bên lề trang */
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa grid */
+}
+
+.manga-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ẩn các phần bị thừa ra khỏi border-radius */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none; /* Bỏ gạch chân của đường link */
+    color: #333; /* Màu chữ mặc định */
+    display: block; /* Để thẻ <a> hoạt động như một khối */
+}
+
+.manga-card:hover {
+    transform: translateY(-5px); /* Nhấc card lên một chút khi di chuột vào */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.manga-card img {
+    width: 100%;
+    height: 250px; /* Cố định chiều cao ảnh bìa */
+    object-fit: cover; /* Giữ tỷ lệ ảnh và cắt bớt phần thừa */
+}
+
+.manga-card h3 {
+    margin: 0;
+    padding: 15px 10px;
+    font-size: 16px;
+    white-space: nowrap; /* Ngăn không cho tên truyện xuống dòng */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Hiển thị '...' nếu tên quá dài */
+}
+/* --- CSS cho Trang thông tin truyện --- */
+
+.manga-info-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px; /* Khoảng cách giữa ảnh bìa và phần thông tin */
+    align-items: flex-start;
+}
+
+#manga-cover {
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.manga-details {
+    flex: 1; /* Cho phép phần text tự co giãn */
+}
+
+.manga-details h1 {
+    margin-top: 0;
+}
+
+.manga-details p {
+    line-height: 1.6; /* Tăng khoảng cách dòng cho dễ đọc */
+    color: #555;
+}
+
+.chapter-list-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#chapter-list .chapter-link {
+    display: block; /* Hiển thị mỗi chapter trên 1 dòng */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+#chapter-list .chapter-link:hover {
+    background-color: #f5f5f5;
+    border-color: #bbb;
+}
+
+/* Thêm link cho logo để quay về trang chủ */
+.main-header a.logo {
+    text-decoration: none;
+    color: white;
+}
+/* --- CSS cho Header của trang đọc truyện --- */
+#reader-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#reader-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+#reader-header a {
+    text-decoration: none;
+    color: #0077be;
+    font-size: 16px;
+}
+
+/* --- CSS cho nút điều hướng Chapter --- */
+.chapter-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.nav-button:hover {
+    background-color: #e9e9e9;
+    border-color: #ccc;
+}
+
+/* --- CSS cho ô tìm kiếm --- */
+.search-container {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+}
