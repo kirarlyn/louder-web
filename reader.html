@@ -22,23 +22,29 @@
             <div id="reader-header">
                 <a href="#" id="back-to-manga-link">‹ Quay lại</a>
                 <h2 id="chapter-title"></h2>
-            </div>
-            
+                <div class="view-mode-toggle">
+                    <button id="mode-page-flip" class="toggle-button active">Lật trang</button>
+                    <button id="mode-webtoon" class="toggle-button">Cuộn dọc</button>
+                </div>
+                </div>
+
             <div class="chapter-navigation">
                 <a href="#" id="prev-chapter-link" class="nav-button">« Chapter Trước</a>
                 <a href="#" id="next-chapter-link" class="nav-button">Chapter Tiếp »</a>
             </div>
 
-            <div class="manga-page">
-                <img id="current-page-image" src="" alt="Trang truyện">
+            <div id="page-flip-viewer">
+                <div class="manga-page">
+                    <img id="current-page-image" src="" alt="Trang truyện">
+                </div>
+                <div class="navigation">
+                    <span id="page-counter">Trang 0 / 0</span>
+                </div>
             </div>
 
-            <div class="navigation">
-                <button id="prev-button">« Trang Trước</button>
-                <span id="page-counter">Trang 0 / 0</span>
-                <button id="next-button">Trang Sau »</button>
+            <div id="webtoon-viewer">
+                </div>
             </div>
-        </div>
     </main>
 
     <script src="database.js"></script>

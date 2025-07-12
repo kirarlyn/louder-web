@@ -272,3 +272,59 @@ body {
     font-size: 14px;
     padding: 5px 12px;
 }
+/* --- CSS cho Chế độ đọc --- */
+.view-mode-toggle {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.toggle-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.toggle-button:not(.active) {
+    color: #555;
+}
+
+.toggle-button:first-of-type {
+    border-right: 1px solid #ccc;
+}
+
+.toggle-button.active {
+    background-color: #0077be;
+    color: white;
+    font-weight: bold;
+}
+
+/* Ẩn/hiện các khu vực theo chế độ */
+#webtoon-viewer {
+    display: none; /* Mặc định ẩn chế độ cuộn dọc */
+}
+
+.webtoon-mode #webtoon-viewer {
+    display: block; /* Hiện ra khi có class webtoon-mode */
+}
+
+.webtoon-mode #page-flip-viewer {
+    display: none; /* Ẩn đi khi có class webtoon-mode */
+}
+
+/* CSS cho các ảnh trong chế độ cuộn dọc */
+#webtoon-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; /* Khoảng cách nhỏ giữa các ảnh */
+}
+
+.webtoon-image {
+    max-width: 100%;
+    /* Không cần set chiều cao, để nó tự nhiên */
+}
