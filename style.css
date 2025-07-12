@@ -328,3 +328,131 @@ body {
     max-width: 100%;
     /* Không cần set chiều cao, để nó tự nhiên */
 }
+/* --- CSS cho nút Dark Mode --- */
+.main-header {
+    position: relative; /* Cần để định vị nút con */
+}
+
+.dark-mode-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.dark-mode-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- CSS cho Dark Mode --- */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Header */
+body.dark-mode .main-header {
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .dark-mode-button {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Trang chủ */
+body.dark-mode .page-title h1 {
+    color: #f1f1f1;
+}
+
+body.dark-mode #search-input {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #f1f1f1;
+}
+
+body.dark-mode #search-input::placeholder {
+    color: #888;
+}
+
+body.dark-mode .manga-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .manga-card:hover {
+    border-color: #555;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .tag {
+    background-color: #3a3a3a;
+    color: #ccc;
+}
+
+/* Trang thông tin truyện */
+body.dark-mode .manga-details p {
+    color: #bbb;
+}
+
+body.dark-mode .manga-details-tags .tag {
+    background-color: #005f99;
+}
+
+body.dark-mode #chapter-list .chapter-link {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode #chapter-list .chapter-link:hover {
+    background-color: #2a2a2a;
+    border-color: #555;
+}
+
+/* Trang đọc truyện */
+body.dark-mode #reader-header {
+    border-bottom-color: #333;
+}
+
+body.dark-mode #reader-header a {
+    color: #3498db;
+}
+
+body.dark-mode .nav-button {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-button:hover {
+    background-color: #3a3a3a;
+    border-color: #666;
+}
+
+body.dark-mode .toggle-button {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-mode .toggle-button.active {
+    background-color: #005f99;
+}
+
+body.dark-mode .manga-page img {
+    border-color: #444;
+}
