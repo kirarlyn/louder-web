@@ -37,7 +37,7 @@ const database = {
         title: 'Doraemon',
         author: 'Fujiko F. Fujio',
         description: 'Doraemon là một bộ manga Nhật Bản được sáng tác bởi Fujiko F. Fujio. Bộ manga kể về một chú mèo máy tên là Doraemon, người du hành ngược thời gian từ thế kỷ 22 để giúp đỡ một cậu bé lớp bốn hậu đậu tên là Nobi Nobita.',
-        cover: 'data/doraemon/cover.jpg',
+        cover: 'data/one-piece/cover.jpg',
         status: 'Đã hoàn thành',
         tags: ['Hành động', 'Phiêu lưu', 'Hài hước'],
         chapters: [
