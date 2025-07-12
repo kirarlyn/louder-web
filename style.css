@@ -241,3 +241,34 @@ body {
     border: 1px solid #ccc;
     box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
 }
+
+/* --- CSS cho Tags --- */
+.tags-container {
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    background-color: #e0e0e0;
+    color: #555;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* CSS cho tag ở trang chi tiết */
+.manga-details-tags {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.manga-details-tags .tag {
+    background-color: #0077be;
+    color: white;
+    font-size: 14px;
+    padding: 5px 12px;
+}

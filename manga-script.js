@@ -19,8 +19,24 @@ if (mangaData) {
     pageTitle.textContent = `Louder - ${mangaData.title}`;
     mangaCover.src = mangaData.cover;
     mangaTitle.textContent = mangaData.title;
-    mangaAuthor.textContent = `Tác giả: ${mangaData.author}`;
+    mangaAuthor.innerHTML = `
+        <p><strong>Tác giả:</strong> ${mangaData.author}</p>
+        <p><strong>Tình trạng:</strong> ${mangaData.status}</p>
+    `;
     mangaDescription.textContent = mangaData.description;
+
+    // ****** NÂNG CẤP MỚI: Thêm các tag vào trang chi tiết ******
+    const tagsContainer = document.createElement('div');
+    tagsContainer.className = 'manga-details-tags';
+    mangaData.tags.forEach(tagText => {
+        const tagElement = document.createElement('span');
+        tagElement.className = 'tag';
+        tagElement.textContent = tagText;
+        tagsContainer.appendChild(tagElement);
+    });
+    // Chèn container tag vào sau phần mô tả
+    mangaDescription.after(tagsContainer);
+    // ********************************************************
 
     // Tạo danh sách chapter
     mangaData.chapters.forEach((chapter, index) => {

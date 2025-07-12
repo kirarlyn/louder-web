@@ -27,13 +27,28 @@ function renderMangaList(filter = '') {
             const mangaTitle = document.createElement('h3');
             mangaTitle.textContent = manga.title;
 
+            // ****** NÂNG CẤP MỚI: Tạo và thêm các tag ******
+            const tagsContainer = document.createElement('div');
+            tagsContainer.className = 'tags-container';
+
+            // Chỉ lấy 2 tag đầu tiên để hiển thị cho gọn
+            manga.tags.slice(0, 2).forEach(tagText => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'tag';
+                tagElement.textContent = tagText;
+                tagsContainer.appendChild(tagElement);
+            });
+            // ************************************************
+
             mangaLink.appendChild(coverImage);
             mangaLink.appendChild(mangaTitle);
+            mangaLink.appendChild(tagsContainer); // Gắn container chứa tag vào card
 
             mangaListContainer.appendChild(mangaLink);
         }
     }
 }
+
 
 
 // Thêm sự kiện 'input' cho ô tìm kiếm

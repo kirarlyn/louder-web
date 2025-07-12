@@ -8,6 +8,8 @@ const database = {
         author: 'Eiichiro Oda',
         description: 'Vua Hải Tặc (ワンピース Wan Pīsu?), một bộ manga của tác giả Oda Eiichiro dành cho lứa tuổi thiếu niên. Câu chuyện về một cậu bé tên Monkey D. Luffy, được khuyến khích bởi thần tượng thời thơ ấu và hải tặc hùng mạnh "Tóc đỏ" Shanks, bắt đầu một cuộc hành trình từ Biển Đông để tìm kho báu huyền thoại, One Piece, và tự xưng là Vua Hải Tặc.',
         cover: 'data/one-piece/cover.jpg', // Đường dẫn tới ảnh bìa
+        status: 'Đang tiến hành',
+        tags: ['Hành động', 'Phiêu lưu', 'Hài hước'],
         chapters: [
             {
                 name: 'Chapter 1: Romance Dawn',
@@ -34,6 +36,8 @@ const database = {
         author: 'Fujiko F. Fujio',
         description: 'Doraemon là một bộ manga Nhật Bản được sáng tác bởi Fujiko F. Fujio. Bộ manga kể về một chú mèo máy tên là Doraemon, người du hành ngược thời gian từ thế kỷ 22 để giúp đỡ một cậu bé lớp bốn hậu đậu tên là Nobi Nobita.',
         cover: 'data/doraemon/cover.jpg',
+        status: 'Đã hoàn thành',
+        tags: ['Hành động', 'Phiêu lưu', 'Hài hước'],
         chapters: [
             {
                 name: 'Chapter 1: Vị khách đến từ tương lai',
@@ -53,4 +57,4 @@ const database = {
             },
         ]
     }
-}
+};
