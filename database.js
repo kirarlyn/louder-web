@@ -17,7 +17,8 @@ const database = {
                     'data/one-piece/chapter-1/01.jpg',
                     'data/one-piece/chapter-1/02.jpg',
                     'data/one-piece/chapter-1/03.jpg'
-                ]
+                ],
+                publishDate: '2025-07-01T12:00:00Z' // ~1 tuần trước
             },
             {
                 name: 'Chapter 2: Romance Dawn',
@@ -25,7 +26,8 @@ const database = {
                     'data/one-piece/chapter-1/01.jpg',
                     'data/one-piece/chapter-1/02.jpg',
                     'data/one-piece/chapter-1/03.jpg'
-                ]
+                ],
+                publishDate: '2025-07-10T20:00:00Z' // ~2 ngày trước
             }
             // thêm các chapter khác
         ]
@@ -45,7 +47,8 @@ const database = {
                     'data/doraemon/chapter-1/01.jpg',
                     'data/doraemon/chapter-1/02.jpg',
                     'data/doraemon/chapter-1/03.jpg'
-                ]
+                ],
+                publishDate: '2025-07-05T12:00:00Z' // ~1 tuần trước
             },
             {
                 name: 'Chapter 2: Vị khách đến từ tương lai',
@@ -53,7 +56,8 @@ const database = {
                     'data/doraemon/chapter-1/01.jpg',
                     'data/doraemon/chapter-1/02.jpg',
                     'data/doraemon/chapter-1/03.jpg'
-                ]
+                ],
+                publishDate: '2025-07-12T01:30:00Z' // Vài giờ trước (8:30 sáng)
             },
         ]
     }

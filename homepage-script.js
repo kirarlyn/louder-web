@@ -3,46 +3,50 @@ const searchInput = document.getElementById('search-input');
 
 // Hàm để "vẽ" danh sách truyện ra màn hình
 // Nhận vào một tham số là 'filter' để lọc theo tên
-function renderMangaList(filter = '') {
-    // 1. Xóa hết danh sách truyện hiện tại để vẽ lại
-    mangaListContainer.innerHTML = '';
+    function renderMangaList(filter = '') {
+        mangaListContainer.innerHTML = '';
+        const lowerCaseFilter = filter.toLowerCase();
 
-    // 2. Chuyển filter về chữ thường để tìm kiếm không phân biệt hoa/thường
-    const lowerCaseFilter = filter.toLowerCase();
+        for (const mangaId in database) {
+            const manga = database[mangaId];
 
-    // 3. Lặp qua database và chỉ hiển thị truyện khớp với filter
-    for (const mangaId in database) {
-        const manga = database[mangaId];
+            if (manga.title.toLowerCase().includes(lowerCaseFilter)) {
+                const mangaLink = document.createElement('a');
+                mangaLink.href = `manga.html?id=${mangaId}`;
+                mangaLink.className = 'manga-card';
 
-        // Nếu tên truyện (chữ thường) chứa cụm từ tìm kiếm (chữ thường)
-        if (manga.title.toLowerCase().includes(lowerCaseFilter)) {
-            const mangaLink = document.createElement('a');
-            mangaLink.href = `manga.html?id=${mangaId}`;
-            mangaLink.className = 'manga-card';
+                const coverImage = document.createElement('img');
+                coverImage.src = manga.cover;
+                coverImage.alt = manga.title;
 
-            const coverImage = document.createElement('img');
-            coverImage.src = manga.cover;
-            coverImage.alt = manga.title;
+                const mangaTitle = document.createElement('h3');
+                mangaTitle.textContent = manga.title;
 
-            const mangaTitle = document.createElement('h3');
-            mangaTitle.textContent = manga.title;
+            // ****** NÂNG CẤP MỚI: Hiển thị chapter mới nhất ******
+                const latestUpdateContainer = document.createElement('div');
+                latestUpdateContainer.className = 'latest-update';
 
-            // ****** NÂNG CẤP MỚI: Tạo và thêm các tag ******
-            const tagsContainer = document.createElement('div');
-            tagsContainer.className = 'tags-container';
+            // Lấy chapter cuối cùng trong danh sách (coi là mới nhất)
+            if (manga.chapters.length > 0) {
+                const latestChapter = manga.chapters[manga.chapters.length - 1];
 
-            // Chỉ lấy 2 tag đầu tiên để hiển thị cho gọn
-            manga.tags.slice(0, 2).forEach(tagText => {
-                const tagElement = document.createElement('span');
-                tagElement.className = 'tag';
-                tagElement.textContent = tagText;
-                tagsContainer.appendChild(tagElement);
-            });
-            // ************************************************
+                const chapterName = document.createElement('span');
+                chapterName.className = 'latest-chapter-name';
+                chapterName.textContent = latestChapter.name;
+
+                const chapterTime = document.createElement('span');
+                chapterTime.className = 'latest-chapter-time';
+                // Gọi hàm từ file utils.js để định dạng thời gian
+                chapterTime.textContent = formatTimeAgo(latestChapter.publishDate);
+
+                latestUpdateContainer.appendChild(chapterName);
+                latestUpdateContainer.appendChild(chapterTime);
+            }
+            // ****************************************************
 
             mangaLink.appendChild(coverImage);
             mangaLink.appendChild(mangaTitle);
-            mangaLink.appendChild(tagsContainer); // Gắn container chứa tag vào card
+            mangaLink.appendChild(latestUpdateContainer); // Gắn thông tin mới vào card
 
             mangaListContainer.appendChild(mangaLink);
         }

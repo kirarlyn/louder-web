@@ -456,3 +456,33 @@ body.dark-mode .toggle-button.active {
 body.dark-mode .manga-page img {
     border-color: #444;
 }
+/* --- CSS cho thông tin chapter mới --- */
+.latest-update {
+    padding: 10px;
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Khoảng cách giữa 2 dòng */
+    border-top: 1px solid #eee; /* Đường kẻ phân cách */
+}
+
+.latest-chapter-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Hiển thị '...' nếu tên chapter quá dài */
+}
+
+.latest-chapter-time {
+    color: #999;
+}
+
+/* Tương thích với Dark Mode */
+body.dark-mode .latest-update {
+    color: #ccc;
+    border-top-color: #333;
+}
+
+body.dark-mode .latest-chapter-time {
+    color: #888;
+}
